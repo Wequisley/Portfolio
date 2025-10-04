@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wequisley Batista - Portfólio</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts: Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&display=swap" rel="stylesheet">
+    <!-- Google Fonts: Sansita -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libertinus+Mono&display=swap" rel="stylesheet">
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="menuStyle">
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> <span>INÍCIO</span></a></li>
+                <li><a href="sobre.html"><i class="fa-solid fa-circle-info"></i> <span>SOBRE</span></a></li>
+                <li><a href="portfolio.html"><i class="fa-solid fa-briefcase"></i> <span>PORTFÓLIO</span></a></li>
+                <li><a href="contato.html"><i class="fa-solid fa-user"></i> <span>CONTATO</span></a></li>
+            </ul>
+        </nav>
+    </header>
+ <br><br>
+    <main>
+        <section class="projects-section">
+            <div class="projects-carousel">
+                <button class="carousel-btn prev" aria-label="Anterior"><i class="fa-solid fa-chevron-left"></i></button>
+                <div class="carousel-track">
+                    <!-- Card 1 -->
+                    <div class="project-card">
+                        <img src="img/fitworld.png" alt="Projeto 1" class="project-img">
+                        <div class="project-info">
+                            <h2 class="project-title">FitnessWorld</h2>
+                            <p class="project-desc">FitnessWorld é um mini blog que desenvolvi para testar minhas habilidades em HTML, CSS e JavaScript. Nele, abordo temas como métodos de treinamento, receitas fitness e frases motivacionais. Todo o design, arquitetura e código foram feitos por mim, resultando em um mini blog completo.</p>
+                            <a href="https://wequisley.github.io/FitnessWorld/Receitas.html" target="_blank" class="project-btn">Acessar Projeto</a>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="project-card">
+                        <img src="img/DraEve.png" alt="Projeto 2" class="project-img">
+                        <div class="project-info">
+                            <h2 class="project-title">Dra.Evellynn</h2>
+                            <p class="project-desc">Desenvolvi este site para a cliente Evellynn Contini, uma renomada esteticista e cirurgiã plástica. Criei o site exatamente como ela solicitou e o resultado superou as expectativas — ela adorou! Para o desenvolvimento, utilizei HTML, CSS e JavaScript.</p>
+                            <a href="https://dra-evellynn.github.io/estetica/" target="_blank" class="project-btn">Acessar Projeto</a>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="project-card">
+                        <img src="img/Vendas.png" alt="Projeto 3" class="project-img">
+                        <div class="project-info">
+                            <h2 class="project-title">Dashboard de Vendas</h2>
+                            <p class="project-desc">Desenvolvi um painel de vendas em HTML, CSS e JavaScript, que permite cadastrar produtos com informações detalhadas, visualizar e baixar uma planilha com todas as vendas e acompanhar gráficos com o resumo de lucros e gastos.</p>
+                            <a href="https://wequisley.github.io/Dashboard-De-Vendas/add-sales.html" target="_blank" class="project-btn">Acessar Projeto</a>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="project-card">
+                        <img src="img/Ejetar.png" alt="Projeto 4" class="project-img">
+                        <div class="project-info">
+                            <h2 class="project-title">Ejetor de Água</h2>
+                            <p class="project-desc">Esse foi um dos meus primeiros projetos, desenvolvido enquanto ainda estava aprendendo. Criei um ejetor de água do alto-falante do celular simples em HTML e CSS, que ao clicar em um botão reproduz um áudio com diferentes frequências para ajudar a expulsar resíduos de água do alto-falante.</p>
+                            <a href="https://wequisley.github.io/EJETAR-GUA" target="_blank" class="project-btn">Acessar Projeto</a>
+                        </div>
+                    </div>
+                    
+                </div>
+                <button class="carousel-btn next" aria-label="Próximo"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+        </section>
+        <br><br>
+
+        <section>
+            <h1 class="sh101">Em breve, novos projetos em desenvolvimento.</h1>
+        </section>
+
+        <script>
+    const track = document.querySelector('.carousel-track');
+    const carouselContainer = document.querySelector('.projects-carousel');
+    const cards = document.querySelectorAll('.project-card');
+    const prevBtn = document.querySelector('.carousel-btn.prev');
+    const nextBtn = document.querySelector('.carousel-btn.next');
+    let currentIndex = 0;
+
+    const GAP_SIZE = 32; // Espaço entre os cards no CSS
+
+    // Calcula o limite máximo de rolagem
+    function calculateMaxIndex() {
+        // Rola até o penúltimo card, garantindo que o último card fique visível
+        if (cards.length === 0) return 0;
+        return cards.length - 1; 
+    }
+
+    function updateCarousel() {
+        // Verifica se os elementos estão carregados
+        if (cards.length === 0 || !carouselContainer) return;
+        
+        const cardWidth = cards[0].offsetWidth;
+        const containerWidth = carouselContainer.offsetWidth;
+        
+        // Distância do início de um card até o início do próximo card (Passo)
+        const stepWidth = cardWidth + GAP_SIZE;
+
+        // 1. Calcula a posição onde o card ativo começa
+        const targetPosition = currentIndex * stepWidth;
+
+        // 2. Calcula o offset necessário para centralizar o card (largura do contêiner / 2 - largura do card / 2)
+        const centerOffset = (containerWidth / 2) - (cardWidth / 2);
+        
+        // 3. A rolagem final é o ponto de parada menos o deslocamento de centralização
+        const finalTransform = targetPosition - centerOffset;
+
+        // Limita o índice atual
+        const maxIndex = calculateMaxIndex();
+        if (currentIndex > maxIndex) {
+            currentIndex = maxIndex;
+        }
+
+        // Aplica o deslocamento em pixels
+        track.style.transform = `translateX(${-finalTransform}px)`;
+    }
+
+    prevBtn.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+        }
+    });
+
+    nextBtn.addEventListener('click', () => {
+        const maxIndex = calculateMaxIndex();
+        
+        if (currentIndex < maxIndex) {
+            currentIndex++;
+            updateCarousel();
+        }
+    });
+
+    // Recalcula o alinhamento centralizado em caso de redimensionamento
+    window.addEventListener('resize', updateCarousel);
+    
+    // Inicializa o carrossel
+    updateCarousel(); 
+</script>
+    </main>
+    <br><br>

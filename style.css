@@ -1,0 +1,922 @@
+/* CONTATO FORMULÁRIO */
+.contato-section {
+    width: 100vw;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+}
+.contato-form {
+    background: #000000;
+    border-radius: 40px;
+    padding: 40px 32px 32px 32px;
+    max-width: 480px;
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+    gap: 5px;
+}
+.contato-form label {
+    color: #fff;
+    font-family: 'Libertinus Mono', monospace;
+    font-size: 1.6rem;
+    font-style: italic;
+    margin-bottom: 4px;
+    margin-top: 8px;
+    letter-spacing: 2px;
+}
+.contato-form input,
+.contato-form textarea {
+    border: none;
+    border-radius: 24px;
+    padding: 12px 18px;
+    font-size: 1.1rem;
+    font-family: 'Montserrat', Arial, sans-serif;
+    margin-bottom: 8px;
+    background: #cacaca;
+    color: #111;
+    outline: none;
+    resize: none;
+    box-sizing: border-box;
+}
+.contato-form textarea {
+    min-height: 120px;
+    max-height: 220px;
+}
+.contato-btn {
+    background: #fff;
+    color: #111;
+    font-family: 'Libertinus Mono', monospace;
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: 700;
+    border-radius: 30px;
+    padding: 12px 0;
+    width: 70%;
+    margin: 18px auto 0 auto;
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: 2px;
+    border: none;
+    cursor: pointer;
+    transition: 0.6s;
+}
+.contato-btn:hover {
+    transition: 0.6s;
+    transform: scale(1.05);
+    background: #ffd700;
+    color: #ffffff;
+}
+@media (max-width: 600px) {
+    .contato-form {
+        padding: 18px 4vw 18px 4vw;
+        max-width: 98vw;
+        border-radius: 18px;
+    }
+    .contato-form label {
+        font-size: 1.1rem;
+    }
+    .contato-btn {
+        font-size: 1.1rem;
+        padding: 8px 0;
+        width: 98%;
+    }
+}
+body {
+    overflow-x: hidden;
+    margin: 0;
+    font-family: 'Montserrat', Arial, sans-serif;
+    background: #fff;
+    color: #111;
+}
+
+header {
+    background: #000;
+    padding: 0;
+}
+
+.menuStyle {
+    font-family: "Libertinus Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+}
+
+nav {
+    width: 100vw;
+    overflow-x: unset;
+    background: #000;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 70px;
+    gap: 0;
+    width: 100vw;
+    box-sizing: border-box;
+    overflow-x: unset;
+}
+
+nav ul li {
+    margin: 0 30px;
+    flex: 0 0 auto;
+    min-width: 80px;
+    text-align: center;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-style: italic;
+    letter-spacing: 1px;
+    transition: color 0.2s;
+    padding: 10px 0;
+    white-space: nowrap;
+    justify-content: center;
+    transition: 0.5s;
+}
+
+nav ul li a:hover {
+    scale: 1.05;
+    color: #adab26;
+}
+
+main {
+    padding: 0;
+}
+
+.hero {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    min-height: 90vh;
+    background: #fff;
+    padding: 60px 0 0 0;
+}
+
+.hero-text {
+    flex: 1;
+    padding: 60px 0 0 40px;
+}
+
+.hero-text h1 {
+    color: black;
+    font-family: "Libertinus Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 6.5rem;
+    font-weight: 700;
+    margin: 0 0 40px 0;
+    line-height: 1;
+}
+
+.social-buttons {
+    margin-bottom: 40px;
+}
+
+.btn {
+    transition: 0.4S;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    text-align: center;
+    width: 100%;
+    max-width: 340px;
+    padding: 16px 36px;
+    box-sizing: border-box;
+    text-align: center;
+    font-family: "Libertinus Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+    display: flex;
+    align-items: center;
+    background: #000;
+    color: #fff;
+    border-radius: 30px;
+    padding: 16px 36px;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-decoration: none;
+    width: fit-content;
+    gap: 16px;
+    transition: background 0.2s, color 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -70%;
+    width: 120%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(0, 0, 0, 0.404) 0%, rgba(255, 255, 255, 0.116) 60%, rgba(255,255,255,0) 100%);
+    border-radius: px;
+    pointer-events: none;
+    animation: reflexo-move 2.8s linear infinite;
+    transform: skewX(-11deg); 
+}
+
+.btn.instagram {
+    transition: 0.4s;
+    font-family: "Libertinus Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+    margin-bottom: 20px;
+}
+
+.btn.instagram:hover{
+    transition: 0.4s;
+    background: #222;
+    color: rgb(255, 0, 64);
+    transform: scale(1.02);
+}
+.btn:hover {
+    transition: 0.4S;
+    background: #222;
+    color: #ffd700;
+    transform: scale(1.02);
+}
+
+.tech-icons {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.tech-icons span {
+    font-size: 3rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.html5 i {
+    transition: 0.4s;
+    color: #e44d26;
+    font-size: 3.5rem;
+}
+
+.html5:hover {
+    transform: scale(1.05);
+    color: #8c00ff;
+    transition: 1.4s;
+}
+
+
+.css3 i {
+    color: #2965f1;
+    font-size: 3.5rem;
+}
+
+.css3:hover {
+    transform: scale(1.05);
+    color:  #8c00ff;
+    transition: 1.4s;
+}
+
+.js i {
+    color: #ffee05;
+    font-size: 3.5rem;
+}
+
+.js:hover {
+    transform: scale(1.05);
+    color:  #8c00ff;
+    transition: 1.4s;
+}
+
+.hero-img {
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding-right: 60px;
+    padding-top: 20px;
+}
+
+.hero-img-bg {
+    background: #fff;
+    border-radius: 0% 30%;
+    width: 500px;
+    height: 650px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(38, 0, 255, 0.486);
+}
+
+.hero-img-bg:hover {
+    box-shadow: 0 8px 32px rgba(255, 0, 0, 0.486);
+    transition: 0.4s;
+}
+
+.hero-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0% 30%;
+    background: #eee;
+}
+
+@keyframes reflexo-move {
+    0% { left: -80%; }
+    60% { left: 100%; }
+    100% { left: 100%; }
+}
+
+@media (max-width: 1000px) {
+    .hero {
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 0 0 0;
+    }
+    .hero-text, .hero-img {
+        padding: 0;
+        text-align: center;
+        justify-content: center;
+    }
+    .hero-img-bg {
+        width: 320px;
+        height: 400px;
+    }
+}
+@media (max-width: 600px) {
+    html, body {
+        overflow-x: hidden;
+    }
+    header, nav {
+        width: 100vw;
+        max-width: 100vw;
+        overflow-x: hidden;
+    }
+    nav ul {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        gap: 2px;
+        padding: 0;
+        width: 100vw;
+        max-width: 100vw;
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }
+    nav ul li, nav ul li a {
+        width: 100vw;
+        max-width: 100vw;
+        box-sizing: border-box;
+        margin: 0;
+    }
+    nav ul li {
+        margin: 2px 0;
+    }
+    nav ul li a {
+        font-size: 1.1rem;
+        padding: 10px 0;
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        justify-content: center;
+        width: 100vw;
+        max-width: 100vw;
+        box-sizing: border-box;
+    }
+    main, .hero, .hero-text, .hero-img, .hero-img-bg {
+        width: 100vw;
+        max-width: 100vw;
+        box-sizing: border-box;
+    }
+    .hero-img-bg {
+        width: 90vw;
+        max-width: 260px;
+        height: 320px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .btn, .social-buttons, .tech-icons {
+        width: 100vw;
+        max-width: 100vw;
+        box-sizing: border-box;
+    }
+    .btn {
+        max-width: 320px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .tech-icons {
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 30px;
+        justify-content: center;
+        align-items: center;
+    }
+    .tech-icons span {
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .hero-text h1 {
+        font-size: 2.8rem;
+        word-break: break-word;
+        margin-bottom: 18px;
+    }
+}
+@media (min-width: 601px) and (max-width: 1000px) {
+    html, body, header, nav, main, .hero, .hero-text, .hero-img, .hero-img-bg {
+        width: 100vw;
+        max-width: 100vw;
+        min-width: 0;
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }
+    nav ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        gap: 10px;
+        padding: 0 8px;
+        width: 100vw;
+        max-width: 100vw;
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }
+    nav ul li {
+        margin: 0 12px;
+        min-width: 80px;
+        text-align: center;
+    }
+    nav ul li a {
+        font-size: 1.5rem;
+        padding: 10px 0;
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        justify-content: center;
+    }
+    .hero {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 0 0 0;
+        min-height: 90vh;
+    }
+    .hero-text, .hero-img {
+        padding: 0;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .hero-text {
+        padding: 32px 6vw 0 6vw;
+        align-items: center;
+    }
+    .hero-text h1 {
+        font-size: 3.2rem;
+        margin-bottom: 24px;
+        word-break: break-word;
+    }
+    .social-buttons {
+        margin-bottom: 24px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .btn {
+        font-size: 1.2rem;
+        padding: 12px 0;
+        max-width: 340px;
+        width: 90vw;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 14px;
+    }
+    .tech-icons {
+        flex-wrap: wrap;
+        gap: 16px;
+        margin-top: 32px;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .tech-icons span {
+        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .hero-img-bg {
+        width: 60vw;
+        max-width: 320px;
+        min-width: 180px;
+        height: 44vw;
+        max-height: 340px;
+        min-height: 180px;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 8px 32px rgba(38, 0, 255, 0.486);
+    }
+    .hero-img {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+    }
+}
+
+/* Seção SOBRE */
+.sobre {
+    padding: 80px 10%;
+    background: #fff;
+    text-align: center;
+}
+
+.sobre .titulo {
+    transition: 0.4s;
+    font-family: "Libertinus Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.titulo:hover{
+    scale: 1.05;
+    transition: 0.4s;
+    color: #ff0000;
+}
+
+/* Container dos cards */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Card individual */
+.card {
+    transition: 0.7s;
+    background: #000;
+    color: #fff;
+    border-radius: 20px;
+    padding: 20px;
+    max-width: 300px;
+    flex: 1 1 250px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 4px 16px rgba(187, 255, 0, 0.486);   
+    scale: 1.03;
+    transition: 0.7S;
+    color: #adab26;;
+    transform: translateY(-10px);
+}
+
+/* Título dos cards */
+.card-title {
+    font-family: "Libertinus Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.5rem;
+    font-style: italic;
+    background: #fff;
+    color: #000;
+    border-radius: 12px;
+    padding: 5px 15px;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.card-title:hover{
+    background: #adab26;
+    color: #000;
+}
+
+/* --- ESTILOS DO CARROSSEL (Geral) --- */
+
+.projects-section {
+    width: 100vw;
+    max-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+    padding: 0;
+    margin: 0;
+}
+
+.projects-carousel {
+    width: 100vw;
+    max-width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+    min-height: 480px;
+}
+
+.carousel-btn {
+    background: #888;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    color: #fff;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s;
+    z-index: 2;
+}
+.carousel-btn:hover {
+    background: #444;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s;
+    gap: 32px;
+    width: 100%;
+}
+
+.project-card {
+    transition: 0.6s;
+    background: #111;
+    color: #fff;
+    border-radius: 40px;
+    padding: 32px 24px;
+    min-width: 340px;
+    max-width: 400px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+    text-align: center;
+    font-size: 1.1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 8px;
+    flex: 0 0 100%; 
+}
+
+.project-card:hover {
+    transition: 0.6s;
+    box-shadow: 0 4px 16px rgba(111, 0, 255, 0.486);
+    transition: 0.4s;
+}
+
+.project-img {
+    width: 100%;
+    max-width: 340px;
+    border-radius: 30px;
+    margin-bottom: 18px;
+    object-fit: cover;
+}
+
+.project-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.project-title {
+    font-size: 2rem;
+    font-family: 'Libertinus Mono', monospace;
+    font-style: italic;
+    margin-bottom: 12px;
+    color: #fff;
+    letter-spacing: 2px;
+    transition: 0.4s;
+}
+
+.project-title:hover{
+    color: #ffd700;
+    transition: 0.4s;
+    scale: 1.05;
+}
+
+.project-desc {
+    font-size: 1.1rem;
+    margin-bottom: 18px;
+    color: #fff;
+    text-align: center;
+    transition: 0.4s;
+}
+
+.project-desc:hover{
+    color: #ffd700;
+    transition: 0.4s;
+    scale: 1.05;
+}
+
+.project-btn {
+    display: block;
+    background: #fff;
+    color: #111;
+    font-family: 'Libertinus Mono', monospace;
+    font-size: 1.3rem;
+    font-style: italic;
+    font-weight: 700;
+    border-radius: 30px;
+    padding: 10px 0;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: 2px;
+    transition: background 0.2s, color 0.2s;
+    transition: 0.4s;
+}
+.project-btn:hover {
+    scale: 1.1;
+    transition: 0.4s;
+    background: #ffd700;
+    color: #111;
+}
+
+/* Responsivo para tablets e mobile */
+@media (max-width: 900px) {
+    .projects-carousel {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100vw;
+        max-width: 100vw;
+        margin: 0 auto;
+        overflow: visible;
+        min-height: unset;
+    }
+    .carousel-track {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        width: 100vw;
+        max-width: 100vw;
+        transition: none;
+        transform: none !important;
+    }
+    .project-card {
+        min-width: 90vw;
+        max-width: 98vw;
+        width: 98vw;
+        margin: 0 auto 18px auto;
+        padding: 18px 8px;
+        box-sizing: border-box;
+    }
+    .project-img {
+        max-width: 96vw;
+        border-radius: 18px;
+    }
+    .carousel-btn {
+        margin: 12px 0;
+    }
+}
+
+/* --- ESTILOS DO CARROSSEL (Desktop - MAIS DE 901px) --- */
+@media (min-width: 901px) {
+    .projects-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        max-width: 100vw;
+    }
+    
+    .projects-carousel {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* Largura 100% para que o JS calcule o centro dinamicamente */
+        width: 100%; 
+        margin: 0;
+        overflow: hidden; 
+        min-height: 480px;
+
+        /* Removido o padding: 0 80px para evitar cortes */
+        box-sizing: border-box; 
+        position: relative; 
+    }
+
+    /* Posiciona os botões de forma absoluta nas laterais */
+    .carousel-btn {
+        position: absolute; 
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        padding: 12px;
+    }
+    .carousel-btn.prev {
+        left: 20px;
+    }
+    .carousel-btn.next {
+        right: 20px;
+    }
+
+    .carousel-track {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 32px;
+        
+        width: max-content; 
+        max-width: none;
+        transition: transform 0.5s;
+
+        /* *** IMPORTANTE: Remove o transform inicial, o JS fará toda a centralização *** */
+        transform: translateX(0); 
+    }
+
+    .project-card {
+        /* Mantém a largura fixa de 340px para o cálculo preciso do JS */
+        width: 340px; 
+        min-width: 340px;
+        max-width: 400px;
+        
+        flex-shrink: 0; 
+        flex-grow: 0;
+        
+        margin: 0;
+        padding: 32px 24px;
+        box-sizing: border-box;
+    }
+}
+
+.sh101 {
+    font-family: "Libertinus Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2.0rem;
+    margin: 40px 0;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.sh101:hover{
+    transition: 1.4s;
+    color: #ff0000;
+}
+
+.sh102 {
+    font-family: "Libertinus Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.5rem;
+    margin: 20px 0 40px 0;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.sh102:hover{
+    transition: 1.4s;
+    color: #ff0000;
+}
+
+.sh102color {
+    color: #5900ff;
+}
