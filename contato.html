@@ -1,33 +1,35 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wequisley Batista - Portfólio</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts: Montserrat -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&display=swap" rel="stylesheet">
-    <!-- Google Fonts: Sansita -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Libertinus+Mono&display=swap" rel="stylesheet">
-    <!-- Font Awesome para ícones -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-</head>
-<body>
-    <header>
-        <nav>
-            <ul class="menuStyle">
-                <li><a href="index.html"><i class="fa-solid fa-house"></i> <span>INÍCIO</span></a></li>
-                <li><a href="sobre.html"><i class="fa-solid fa-circle-info"></i> <span>SOBRE</span></a></li>
-                <li><a href="portfolio.html"><i class="fa-solid fa-briefcase"></i> <span>PORTFÓLIO</span></a></li>
-                <li><a href="contato.html"><i class="fa-solid fa-user"></i> <span>CONTATO</span></a></li>
-            </ul>
-        </nav>
-    </header>
-    <br><br>
 
-     <section class="contato-section">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wequisley Batista - Portfólio</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Google Fonts: Montserrat -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&display=swap" rel="stylesheet">
+  <!-- Google Fonts: Sansita -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libertinus+Mono&display=swap" rel="stylesheet">
+  <!-- Font Awesome para ícones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul class="menuStyle">
+        <li><a href="index.html"><i class="fa-solid fa-house"></i> <span>INÍCIO</span></a></li>
+        <li><a href="sobre.html"><i class="fa-solid fa-circle-info"></i> <span>SOBRE</span></a></li>
+        <li><a href="portfolio.html"><i class="fa-solid fa-briefcase"></i> <span>PORTFÓLIO</span></a></li>
+        <li><a href="contato.html"><i class="fa-solid fa-user"></i> <span>CONTATO</span></a></li>
+      </ul>
+    </nav>
+  </header>
+  <br><br>
+
+  <section class="contato-section">
     <form id="contatoForm" class="contato-form">
       <label for="nome">Digite seu nome</label>
       <input type="text" id="nome" name="nome" required>
@@ -51,31 +53,32 @@
   </section>
 
   <!-- Importa o EmailJS -->
-  <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-    <script type="text/javascript">
-      // Garanta que este bloco vem DEPOIS do bloco de importação acima
-      (function(){
-        emailjs.init("Qv1zVJ_7NEZLlfpOH"); // sua public key do EmailJS
-      })();
+  <script>
+    emailjs.init({
+      publicKey: "Chlc9ChTPTnsGOfU1"
+    });
 
-      document.getElementById("contatoForm").addEventListener("submit", function(event) {
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.getElementById("contatoForm");
+
+      form.addEventListener("submit", function (event) {
         event.preventDefault();
 
-        const form = this;
-
-        emailjs.sendForm("service_gb0d4x8", "template_sgwksie", form)
-          .then(function() {
+        emailjs.sendForm("service_zg44nj2", "template_ldtivmp", form)
+          .then(() => {
             alert("✅ Mensagem enviada com sucesso!");
             form.reset();
-          }, function(error) {
-            alert("❌ Erro ao enviar mensagem: " + JSON.stringify(error));
-            console.error(error);
+          })
+          .catch((error) => {
+            alert("❌ Erro ao enviar mensagem: " + error.text);
+            console.error("Erro EmailJS:", error);
           });
       });
-    </script>
+    });
+  </script>
 </body>
+
 </html>
 <br><br>
-
-    
